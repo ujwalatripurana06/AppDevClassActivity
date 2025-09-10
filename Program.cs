@@ -1,23 +1,28 @@
-﻿namespace AppDevClassActivity
+﻿using System;
+
+namespace ClassActivity
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Enter a sentence:");
-            string? sentence = Console.ReadLine();
+            Console.WriteLine("Density Calculator");
+            
+            Console.Write("Enter the mass of the object (in kilograms): ");
+            double mass = Convert.ToDouble(Console.ReadLine());
 
-            int letterCount = 0;
+            Console.Write("Enter the volume of the object (in cubic meters): ");
+            double volume = Convert.ToDouble(Console.ReadLine());
 
-            foreach (char c in sentence)
+            if (volume == 0)
             {
-                if (char.IsLetter(c))
-                {
-                    letterCount++;
-                }
+                Console.WriteLine("Error: Volume cannot be zero.");
             }
-
-            Console.WriteLine($"Number of letters in the sentence: {letterCount}");
+            else
+            {
+                double density = mass / volume;
+                Console.WriteLine($"The density of the object is: {density} kg/m³");
+            }
         }
     }
 }
