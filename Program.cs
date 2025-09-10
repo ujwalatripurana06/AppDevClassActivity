@@ -7,7 +7,7 @@ namespace ClassActivity
         static void Main(string[] args)
         {
             Console.WriteLine("Density Calculator");
-            
+
             Console.Write("Enter the mass of the object (in kilograms): ");
             double mass = Convert.ToDouble(Console.ReadLine());
 
